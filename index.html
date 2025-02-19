@@ -162,41 +162,33 @@
 
 
                     
-<!-- Section that triggers the product modal on click -->
+<!-- Section that triggers the checkout modal on click -->
 <section 
   class="flex flex-col items-center w-[300px] h-[250px] bg-child rounded-xl p-5 transition-all duration-300 ease-in-out hover:scale-110" 
-  onclick="openSellauthModal()"
+  onclick="openSellauthCheckout()"
 >
     <img alt="GtaV logo" loading="lazy" width="2500" height="1700" decoding="async" data-nimg="1" class="w-[250px] h-[170px] rounded-xl" style="color:transparent" srcSet="/_next/gtavlogo.png" src="/_next/gtavlogo.png"/>
     <h1 class="mt-5 text-xl">Fivem Cheat</h1>
 </section>
 
 <!-- Sellauth Embed Script -->
-<script src="https://sellauth.com/assets/js/sellauth-embed.js"></script>
+<script src="https://sellauth.com/assets/js/sellauth-embed-2.js"></script>
 
-<!-- Initialize and open product modal -->
+<!-- Initialize and trigger checkout modal -->
 <script>
-  window.onload = function() {
-    // Ensure Sellauth is fully initialized before trying to use it
-    if (window.sellAuthEmbed) {
-      console.log('Sellauth script loaded successfully');
-    } else {
-      console.error('Sellauth script not loaded correctly');
-    }
-  }
-
-  function openSellauthModal() {
-    // Ensure the embed object is initialized before calling its method
-    if (window.sellAuthEmbed) {
-      window.sellAuthEmbed.openProductModal({
-        domain: 'vx.mysellauth.com',  // Replace with your actual subdomain
-        product: 'cold-external-fivem'  // Replace with your actual product name
-      });
-    } else {
-      console.error('Sellauth Embed is not available.');
-    }
+  function openSellauthCheckout() {
+    window.sellAuthEmbed.checkout(this, {
+      cart: [{ 
+        productId: 231534,  // Replace with the actual product ID
+        variantId: 295898,  // Replace with the actual variant ID
+        quantity: 1
+      }],
+      shopId: 102606,  // Replace with your actual shop ID
+      modal: true   // Set to true to open the modal
+    });
   }
 </script>
+
 
 
 
