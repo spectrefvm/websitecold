@@ -176,13 +176,28 @@
 
 <!-- Initialize and open product modal -->
 <script>
+  window.onload = function() {
+    // Ensure Sellauth is fully initialized before trying to use it
+    if (window.sellAuthEmbed) {
+      console.log('Sellauth script loaded successfully');
+    } else {
+      console.error('Sellauth script not loaded correctly');
+    }
+  }
+
   function openSellauthModal() {
-    window.sellAuthEmbed.openProductModal({
-      domain: 'vx.mysellauth.com',   // Replace with your actual subdomain
-      product: 'cold-external-fivem'
-    });
+    // Ensure the embed object is initialized before calling its method
+    if (window.sellAuthEmbed) {
+      window.sellAuthEmbed.openProductModal({
+        domain: 'vx.mysellauth.com',  // Replace with your actual subdomain
+        product: 'cold-external-fivem'  // Replace with your actual product name
+      });
+    } else {
+      console.error('Sellauth Embed is not available.');
+    }
   }
 </script>
+
 
 
 
