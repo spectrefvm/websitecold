@@ -177,17 +177,19 @@
 <!-- Initialize and trigger checkout modal -->
 <script>
   function openSellauthCheckout() {
-    window.sellAuthEmbed.checkout(this, {
+    // Triggering checkout modal directly
+    window.sellAuthEmbed.checkout({
       cart: [{ 
         productId: 231534,  // Replace with the actual product ID
         variantId: 295898,  // Replace with the actual variant ID
         quantity: 1
       }],
       shopId: 102606,  // Replace with your actual shop ID
-      modal: false   // Set to true to open the modal
+      modal: true  // Set to true to open the modal
     });
   }
 </script>
+
 
 
 
