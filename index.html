@@ -199,7 +199,7 @@
 
 
                         <section class="flex flex-col items-center w-[300px] h-[250px] bg-child rounded-xl p-5  transition-all duration-300 ease-in-out hover:scale-110"
-                            onclick="openSellauthCheckout()"
+                            onclick="openSellauthCheckout2()"
                             >
                             <img alt="GtaV logo" loading="lazy" width="2500" height="1700" decoding="async" data-nimg="1" class="w-[250px] h-[170px] rounded-xl" style="color:transparent" srcSet="/_next/gtavlogo.png" src="/_next/gtavlogo.png"/>
                             <h1 class="mt-5 text-xl">FiveM External - Month</h1>
@@ -207,27 +207,22 @@
 
 <!-- Initialize and trigger checkout modal -->
 <script>
-    function openSellauthCheckout(variantId) {
+    function openSellauthCheckout2() {
         // Triggering checkout modal directly
         window.sellAuthEmbed.checkout(null, {
             cart: [{
                 productId: 231534,
                 // Replace with the actual product ID
-                variantId: variantId,
+                variantId: 295899,
                 // Replace with the actual variant ID
                 quantity: 1
             }],
             shopId: 102606,
             // Replace with your actual shop ID
-            modal: true // Set to true to open the modal
+            modal: false // Set to true to open the modal
         });
     }
 </script>
-
-<select onchange="openSellauthCheckout(this.value)">
-  <option name="295898">Variant 1</option>
-  <option name="295899">Variant 2</option>
-</select>
 
 
                     
