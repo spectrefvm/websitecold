@@ -176,18 +176,21 @@
 
 <!-- Initialize and trigger checkout modal -->
 <script>
-  function openSellauthCheckout() {
-    // Triggering checkout modal directly
-    window.sellAuthEmbed.checkout({
-      cart: [{ 
-        productId: 231534,  // Replace with the actual product ID
-        variantId: 295898,  // Replace with the actual variant ID
-        quantity: 1
-      }],
-      shopId: 102606,  // Replace with your actual shop ID
-      modal: true  // Set to true to open the modal
-    });
-  }
+    function openSellauthCheckout() {
+        // Triggering checkout modal directly
+        window.sellAuthEmbed.checkout(null, {
+            cart: [{
+                productId: 231534,
+                // Replace with the actual product ID
+                variantId: 295898,
+                // Replace with the actual variant ID
+                quantity: 1
+            }],
+            shopId: 102606,
+            // Replace with your actual shop ID
+            modal: true // Set to true to open the modal
+        });
+    }
 </script>
 
 
